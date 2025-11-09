@@ -1,20 +1,26 @@
+// lib/main.dart
 import 'package:flutter/material.dart';
-import 'home_screen.dart';
-import 'result_screen.dart';
+import 'notes_list_screen.dart';
+import 'edit_note_screen.dart';
+import 'view_note_screen.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  runApp(const NotesApp());
+}
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class NotesApp extends StatelessWidget {
+  const NotesApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Notes Taking App - Navigation Demo',
       debugShowCheckedModeBanner: false,
-      title: 'ASWIN SNITTU S - Loan Eligibility Module',
       initialRoute: '/',
       routes: {
-        '/': (context) => const HomeScreen(),
-        '/result': (context) => const ResultScreen(),
+        '/': (context) => const NotesListScreen(),
+        '/edit': (context) => const EditNoteScreen(),
+        '/view': (context) => const ViewNoteScreen(),
       },
     );
   }
